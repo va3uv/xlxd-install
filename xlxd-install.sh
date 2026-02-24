@@ -82,9 +82,9 @@ PHP_MAJOR_MINOR_CUT=$(php -v | head -n 1 | cut -d' ' -f2 | cut -f1-2 -d'.')
 # echo "Major.Minor version (cut): $PHP_MAJOR_MINOR_CUT"
 
 
-cd /etc/nginx/sites-enabled
+cd /root/xlxd-install
 
-wget https://xlx405.va3uv.com/XLX-Install/default
+mv -f default /etc/nginx/sites-enabled/default
 
 sed -i "s/server_name 172.26.9.165/server_name $IPADDR/g" /etc/nginx/sites-enabled/default
 
