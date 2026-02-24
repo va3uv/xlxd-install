@@ -8,3 +8,11 @@ config.inc.php AND callinghome.php
 The script installs an Nginx webserver
 
 xlxd dashboard files can be found in /var/www/html/dashboard
+
+
+INSTALLATION
+
+cd /root
+
+git clone https://github.com/va3uv/xlxd-install.git
+
