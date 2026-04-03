@@ -16,3 +16,10 @@ cd /root
 
 git clone https://github.com/va3uv/xlxd-install.git
 
+cd /root/xlxd-install
+
+chmod +x *.sh
+
+./xlxd-install.sh
+
+
