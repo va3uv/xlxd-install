@@ -24,6 +24,10 @@
 
 #/usr/bin/env bash
 
+# Get location where the install script is, so we know where to source the default file for Nginx
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
 # Install dependencies
 
 apt update
@@ -82,9 +86,7 @@ PHP_MAJOR_MINOR_CUT=$(php -v | head -n 1 | cut -d' ' -f2 | cut -f1-2 -d'.')
 # echo "Major.Minor version (cut): $PHP_MAJOR_MINOR_CUT"
 
 
-cd /root/xlxd-install
-
-mv -f default /etc/nginx/sites-enabled/default
+mv -f $script_dir/default /etc/nginx/sites-enabled/default
 
 sed -i "s/server_name 172.26.9.165/server_name $IPADDR/g" /etc/nginx/sites-enabled/default
 
